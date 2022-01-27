@@ -1,0 +1,17 @@
+КАК УЗНАТЬ КАКАЯ ВЕРСИЯ DOCKER ЗАПУЩЕНА? - docker version
+КАК УЗНАТЬ СКОЛЬКО КОНТЕЙНЕРОВ ЗАПУЩЕНО НА ХОСТЕ? - sudo docker ps 
+ЗАПУСТИТЕ КОНТЕЙНЕР С ОБРАЗОМ REDIS. - sudo docker run -d redis:latest 
+ОСТАНОВИТЕ ТОЛЬКО ЧТО СОЗДАННЫЙ КОНТЕЙНЕР - sudo docker stop name_of_container
+ КАК УЗНАТЬ СКОЛЬКО ВСЕ КОНТЕЙНЕРОВ ЗАПУЩЕНО НА ХОСТЕ?(И ЗАПУЩЕННЫХ И ОСТАНОВЛЕННЫХ) - sudo docker ps  -q
+ЗАПУСТИТЕ В ФОНОВОМ РЕЖИМЕ  (REDIS,  UBUNTU,  ALPINE) - sudo docker run -d redis:latest,  sudo docker run -d ubuntu:latest, sudo docker run -d alpine:latest
+ОСТАНОВИТЕ ВСЕ КОНТЕЙНЕРЫ ОДНОЙ КОМАНДОЙ -  sudo docker stop $(docker ps -a -q) 
+УДАЛИТЕ ВСЕ КОНТЕЙНЕРЫ ОДНОЙ КОМАНДОй - sudo docker rm $(docker ps -a)
+СКАЧАЙТЕ ОБРАЗ BUSYBOX НЕ СОЗДАВАЯ КОНТЕЙНЕР - sudo pull busybox alpine
+УДАЛИТЕ ОБРАЗ BUSYBOX - sudo docker rmi busybox
+ЗАПУСТИТЕ КОНТЕЙНЕР С ОБРАЗОМ NGINX:1.14-ALPINE И ДАЙТЕ ЕМУ ИМЯ WEBAPP - sudo docker run --name webabb -d nginx:1.14-alpine
+УДАЛИТЕ ВСЕ ОБРАЗЫ ОДНОЙ КОМАНДОЙ  - sudo docker rmi $(docker images -q)
+УСТАНОВИТЕ ОБРАЗЫ UBUNTU, MARIADB, REDIS, MYSQL, POSTGRES, MONGO, NGINX -  sudo docker pull ubuntu:latest,sudo docker pull mariadb:latest, sudo docker pull redis:latest, sudo docker pull nginx:latest, sudo docker pull mongo:latest, sudo docker pull postgres:latest, sudo docker pull mysql:latest
+УДАЛИТЕ ОБРАЗ UBUNTU - sudo docker rmi ubuntu:latest
+Спульте docker образ nginx:1.14-alpine. только образ не контейнер - sudo docker pull nginx:1.14-alpine
+Запустите этот образ и назовите  webapp  - sudo docker run --name webabb -d nginx:1.14-alpine
+Удалите все образы одной командой - sudo docker rmi $(docker images -q)
